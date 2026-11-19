@@ -1,0 +1,436 @@
+
+.latest-news-section {
+  width: 100%;
+  padding: 100px 40px;
+  background: #fff;
+}
+
+.latest-news-container {
+  max-width: 1450px;
+  margin: 0 auto;
+}
+
+.latest-news-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 30px;
+  margin-bottom: 55px;
+}
+
+.latest-news-label {
+  color: #f2a900;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.latest-news-heading h2 {
+  color: #073e50;
+  font-size: clamp(38px, 4.5vw, 60px);
+  line-height: 1.15;
+  margin-top: 18px;
+}
+
+.latest-news-heading h2 span {
+  color: #f2a900;
+}
+
+.latest-news-button {
+  padding: 16px 24px;
+  background: #073e50;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.latest-news-button span {
+  margin-left: 12px;
+}
+
+.latest-news-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px 25px;
+}
+
+.news-card {
+  background: #fff;
+  border: 1px solid #eeeeee;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.news-image {
+  width: 100%;
+  height: 260px;
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.news-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.news-card:hover .news-image img {
+  transform: scale(1.06);
+}
+
+.news-category {
+  position: absolute;
+  left: 18px;
+  bottom: 18px;
+  background: #f2a900;
+  color: #073e50;
+  padding: 9px 15px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.news-content {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.news-content h3 {
+  font-size: 22px;
+  line-height: 1.4;
+  margin-bottom: 15px;
+}
+
+.news-content h3 a {
+  color: #073e50;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.news-content h3 a:hover {
+  color: #f2a900;
+}
+
+.news-content p {
+  color: #777f80;
+  font-size: 14px;
+  line-height: 1.8;
+  margin-bottom: 22px;
+}
+
+.news-read-more {
+  color: #073e50;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  margin-top: auto;
+}
+
+.news-read-more:hover {
+  color: #f2a900;
+}
+
+/* FULL WIDTH VIDEO */
+.news-video-section {
+  width: 100%;
+  min-height: 600px;
+  background-image:
+    linear-gradient(rgba(3, 35, 45, 0.75), rgba(3, 35, 45, 0.75)),
+    url("https://new.creativemox.com/pabrica/wp-content/uploads/sites/26/2025/12/industrial-power-plant-2025-03-25-08-00-59-utc2.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 70px 25px;
+}
+
+.news-video-overlay {
+  max-width: 850px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.news-video-label {
+  color: #f2a900;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+}
+
+.news-video-overlay h2 {
+  color: #fff;
+  font-size: clamp(38px, 5vw, 65px);
+  line-height: 1.15;
+  margin-bottom: 22px;
+}
+
+.news-video-overlay p {
+  color: #eeeeee;
+  font-size: 17px;
+  line-height: 1.8;
+  max-width: 650px;
+  margin-bottom: 35px;
+}
+
+.youtube-play-button {
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  background: #ff0000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease;
+  box-shadow: 0 0 0 12px rgba(255,255,255,0.15);
+}
+
+.youtube-play-button svg {
+  width: 35px;
+  height: 35px;
+  fill: #fff;
+}
+
+.youtube-play-button:hover {
+  transform: scale(1.12);
+  background: #cc0000;
+}
+
+.news-video-watch {
+  color: #fff;
+  font-size: 14px;
+  margin-top: 22px;
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .latest-news-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .news-video-section {
+    min-height: 500px;
+  }
+}
+
+@media (max-width: 600px) {
+  .latest-news-section {
+    padding: 65px 20px;
+  }
+
+  .latest-news-heading {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .latest-news-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .news-image {
+    height: 230px;
+  }
+
+  .news-video-section {
+    min-height: 450px;
+  }
+
+  .news-video-overlay p {
+    font-size: 15px;
+  }
+
+  .youtube-play-button {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+
+
+/* INTRO VIDEO SECTION */
+.news-video-section {
+  width: 100%;
+  padding: 65px 40px;
+  background:
+    linear-gradient(rgba(3, 35, 45, 0.82), rgba(3, 35, 45, 0.82)),
+    url("https://new.creativemox.com/pabrica/wp-content/uploads/sites/26/2025/12/industrial-power-plant-2025-03-25-08-00-59-utc2.jpg")
+    center/cover no-repeat;
+}
+
+.news-video-container {
+  max-width: 1450px;
+  min-height: 280px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+/* LEFT SIDE TEXT */
+.news-video-content {
+  max-width: 650px;
+  text-align: left;
+}
+
+.news-video-label {
+  color: #f2a900;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.news-video-content h2 {
+  color: #fff;
+  font-size: clamp(32px, 3.5vw, 46px);
+  line-height: 1.2;
+  margin: 16px 0;
+}
+
+.news-video-content p {
+  color: #e0e5e6;
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 22px;
+}
+
+.news-video-contact {
+  display: inline-flex;
+  align-items: center;
+  padding: 13px 22px;
+  background: #f2a900;
+  color: #073e50;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  transition: 0.3s;
+}
+
+.news-video-contact:hover {
+  background: #fff;
+}
+
+/* RIGHT SIDE INTRO BUTTON */
+.news-video-action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 170px;
+}
+
+.intro-play-button {
+  width: 58px;
+  height: 58px;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  background: #f2a900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.12);
+  transition: 0.3s ease;
+}
+
+.intro-play-button:hover {
+  transform: scale(1.1);
+  background: #fff;
+}
+
+.intro-play-button svg {
+  width: 21px;
+  height: 21px;
+  fill: #073e50;
+}
+
+.news-video-action h3 {
+  color: #fff;
+  font-size: 17px;
+  margin: 18px 0 12px;
+}
+
+.more-videos-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.more-videos-link:hover {
+  color: #f2a900;
+}
+
+.more-videos-link svg {
+  width: 19px;
+  height: 19px;
+  fill: #f00;
+}
+
+/* VIDEO POPUP */
+.intro-video-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: rgba(0, 0, 0, 0.88);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+}
+
+.intro-video-box {
+  width: 100%;
+  max-width: 850px;
+  aspect-ratio: 16 / 9;
+  position: relative;
+  background: #000;
+}
+
+.intro-video-box iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.intro-video-close {
+  position: absolute;
+  top: -42px;
+  right: 0;
+  background: transparent;
+  color: #fff;
+  border: 0;
+  font-size: 34px;
+  cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .news-video-section {
+    padding: 50px 22px;
+  }
+
+  .news-video-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 35px;
+  }
+
+  .news-video-content {
+    text-align: left;
+  }
+
+  .news-video-action {
+    align-items: flex-start;
+  }
+}

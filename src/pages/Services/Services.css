@@ -1,0 +1,627 @@
+
+/* =========================================
+   SERVICES PAGE
+========================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+.service-page {
+  width: 100%;
+  overflow: hidden;
+  background: #fff;
+  color: #252525;
+}
+
+/* =========================================
+   HERO SECTION
+========================================= */
+
+.service-hero {
+  position: relative;
+  width: 100%;
+  min-height: 520px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 6%;
+  background: #004657;
+}
+
+.service-hero-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+}
+
+.service-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(12, 22, 30, 0.55);
+  z-index: 1;
+}
+
+.service-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 950px;
+  color: #fff;
+}
+
+.service-hero-content h1 {
+  font-size: clamp(45px, 5vw, 75px);
+  font-weight: 700;
+  line-height: 1.15;
+  margin: 0 0 20px;
+}
+
+.service-hero-content p {
+  font-size: clamp(16px, 1.5vw, 22px);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* =========================================
+   BREADCRUMB
+========================================= */
+
+.service-breadcrumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 28px 15px 5px;
+  font-size: 18px;
+  color: #777;
+}
+
+.service-breadcrumb a {
+  color: #e88b16;
+  text-decoration: none;
+}
+
+.service-breadcrumb a:hover {
+  color: #222;
+}
+
+/* =========================================
+   SERVICES HEADING
+========================================= */
+
+.service-heading {
+  text-align: center;
+  padding: 5px 20px 65px;
+}
+
+.service-heading h2 {
+  font-size: clamp(48px, 5vw, 66px);
+  font-weight: 700;
+  line-height: 1.2;
+  color: #222;
+  margin: 0;
+}
+
+/* =========================================
+   ABOUT SERVICE LAYOUT
+========================================= */
+
+.service-about {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 17px 12px 10px;
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  gap: 55px;
+  align-items: start;
+}
+
+.service-about-content {
+  width: 100%;
+  min-width: 0;
+}
+
+/* Small Heading */
+
+.service-small-title {
+  display: block;
+  color: #ffad00;
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: 4px;
+  margin-bottom: 35px;
+}
+
+/* Main Heading */
+
+.service-about-content h2 {
+  color: #004657;
+  font-size: clamp(42px, 4.1vw, 76px);
+  line-height: 1.18;
+  font-weight: 800;
+  margin: 0 0 35px;
+}
+
+/* Subtitle */
+
+.service-about-content h3 {
+  color: #004657;
+  font-size: clamp(22px, 2vw, 34px);
+  font-weight: 400;
+  line-height: 1.4;
+  margin: 0 0 30px;
+}
+
+/* Paragraphs */
+
+.service-about-content p {
+  color: #292929;
+  font-size: clamp(17px, 1.35vw, 24px);
+  line-height: 1.5;
+  font-weight: 400;
+  margin: 0 0 24px;
+  max-width: 100%;
+}
+
+/* =========================================
+   CALL CENTER CARD
+========================================= */
+
+.service-call-card {
+  width: 100%;
+  min-width: 0;
+  height: 550px;
+  min-height: 550px;
+  max-height: 550px;
+  box-sizing: border-box;
+  background: #004657;
+  color: #fff;
+  padding: 35px 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* Yellow Icon Circle */
+
+.service-call-icon {
+  width: 120px;
+  height: 120px;
+  flex-shrink: 0;
+  background: #ffbd00;
+  color: #004657;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.service-call-icon svg {
+  width: 110px;
+  height: 110px;
+}
+
+/* Card Heading */
+
+.service-call-card h3 {
+  color: #fff;
+  font-size: clamp(36px, 3vw, 58px);
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 20px;
+}
+
+/* Card Description */
+
+.service-call-card p {
+  color: #fff;
+  font-size: 23px;
+  line-height: 1.6;
+  font-weight: 400;
+  max-width: 440px;
+  margin: 0 0 30px;
+}
+
+/* Yellow Divider */
+
+.service-card-line {
+  width: 75px;
+  height: 3px;
+  flex-shrink: 0;
+  background: #ffbd00;
+  margin-bottom: 22px;
+}
+
+/* Phone Number */
+
+.service-call-card a {
+  color: #fff;
+  font-size: clamp(22px, 2.3vw, 43px);
+  font-weight: 700;
+  line-height: 1.3;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  margin-bottom: 20px;
+}
+
+.service-call-card a:hover {
+  color: #ffbd00;
+}
+
+/* Toll Free */
+
+.service-call-card span {
+  color: #fff;
+  font-size: 23px;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+  .service-about {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    padding: 30px 5%;
+  }
+
+  .service-call-card {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    height: 550px;
+    min-height: 550px;
+    max-height: 550px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .service-hero {
+    min-height: 390px;
+    padding: 60px 20px;
+  }
+
+  .service-hero-content h1 {
+    font-size: 43px;
+  }
+
+  .service-hero-content p {
+    font-size: 16px;
+  }
+
+  .service-breadcrumb {
+    font-size: 15px;
+    padding-top: 22px;
+  }
+
+  .service-heading {
+    padding: 5px 15px 45px;
+  }
+
+  .service-heading h2 {
+    font-size: 43px;
+  }
+
+  .service-about {
+    padding: 25px 18px 50px;
+    gap: 35px;
+  }
+
+  .service-small-title {
+    font-size: 16px;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+  }
+
+  .service-about-content h2 {
+    font-size: 34px;
+    margin-bottom: 20px;
+  }
+
+  .service-about-content h3 {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+
+  .service-about-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 18px;
+  }
+
+  .service-call-card {
+    width: 100%;
+    height: 500px;
+    min-height: 500px;
+    max-height: 500px;
+    padding: 35px 20px;
+  }
+
+  .service-call-icon {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 25px;
+  }
+
+  .service-call-icon svg {
+    width: 85px;
+    height: 85px;
+  }
+
+  .service-call-card h3 {
+    font-size: 36px;
+    margin-bottom: 22px;
+  }
+
+  .service-call-card p {
+    font-size: 17px;
+    margin-bottom: 25px;
+  }
+
+  .service-call-card a {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .service-call-card span {
+    font-size: 17px;
+  }
+}
+
+
+
+/* =========================================
+   SERVICES PAGE - INTRO VIDEO
+========================================= */
+
+.service-page .news-video-section {
+  width: 100%;
+  max-width: 100%;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.65),
+      rgba(0, 0, 0, 0.65)
+    ),
+    url("../../assets/images/hero/hero-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.service-page .news-video-container {
+  width: 100%;
+  min-height: 500px;
+  padding: 75px 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.service-page .news-video-content {
+  flex: 1;
+  min-width: 0;
+  max-width: 700px;
+  color: #fff;
+}
+
+.service-page .news-video-label {
+  display: inline-block;
+  color: #fea928;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+.service-page .news-video-content h2 {
+  font-size: clamp(34px, 4vw, 58px);
+  line-height: 1.2;
+  margin: 0 0 20px;
+}
+
+.service-page .news-video-content p {
+  max-width: 580px;
+  color: #e5e5e5;
+  font-size: 17px;
+  line-height: 1.85;
+  margin: 0 0 28px;
+}
+
+.service-page .news-video-contact {
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 25px;
+  background: #fea928;
+  color: #202020;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.service-page .news-video-contact:hover {
+  background: #ed8900;
+  transform: translateY(-3px);
+}
+
+.service-page .news-video-action {
+  flex: 0 0 auto;
+  min-width: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+}
+
+.service-page .intro-play-button {
+  width: 85px;
+  height: 85px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.service-page .intro-play-button svg {
+  width: 28px;
+  height: 28px;
+  fill: #fea928;
+  margin-left: 5px;
+}
+
+.service-page .intro-play-button:hover {
+  background: #fea928;
+  border-color: #fea928;
+  transform: scale(1.07);
+}
+
+.service-page .intro-play-button:hover svg {
+  fill: #202020;
+}
+
+.service-page .news-video-action h3 {
+  font-size: 17px;
+  margin: 18px 0 25px;
+}
+
+.service-page .more-videos-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: #fff;
+  font-size: 13px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.service-page .more-videos-link svg {
+  width: 20px;
+  height: 20px;
+  fill: #fea928;
+}
+
+.service-page .more-videos-link:hover {
+  color: #fea928;
+}
+
+/* Video Popup */
+
+.service-page .intro-video-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.service-page .intro-video-box {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  aspect-ratio: 16 / 9;
+  background: #000;
+}
+
+.service-page .intro-video-box iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.service-page .intro-video-close {
+  position: absolute;
+  top: -45px;
+  right: 0;
+  width: 38px;
+  height: 38px;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  font-size: 36px;
+  cursor: pointer;
+}
+
+.service-page .intro-video-close:hover {
+  color: #fea928;
+}
+
+/* Mobile */
+
+@media (max-width: 650px) {
+  .service-page .news-video-section,
+  .service-page .news-video-container {
+    min-height: 480px;
+  }
+
+  .service-page .news-video-container {
+    padding: 55px 22px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 35px;
+  }
+
+  .service-page .news-video-content h2 {
+    font-size: 35px;
+  }
+
+  .service-page .news-video-content p {
+    font-size: 15px;
+  }
+
+  .service-page .news-video-action {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 15px;
+  }
+
+  .service-page .intro-play-button {
+    width: 65px;
+    height: 65px;
+  }
+
+  .service-page .news-video-action h3 {
+    margin: 0;
+  }
+
+  .service-page .more-videos-link {
+    width: 100%;
+  }
+
+  .service-page .intro-video-modal {
+    padding: 15px;
+  }
+}

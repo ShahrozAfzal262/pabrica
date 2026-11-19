@@ -1,0 +1,415 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@700;800&family=Roboto:wght@400;500&display=swap");
+
+.tm,
+.tm * {
+  box-sizing: border-box;
+}
+.tm {
+  width: 100%;
+  overflow-x: clip;
+  font-family: "Roboto", Arial, sans-serif;
+  color: #2b2b2b;
+}
+.tm h1,
+.tm h2,
+.tm h3,
+.tm p,
+.tm ol,
+.tm blockquote {
+  margin: 0;
+  padding: 0;
+}
+.tm ol {
+  list-style: none;
+}
+.tm a:focus-visible {
+  outline: 3px solid #ffc400;
+  outline-offset: 3px;
+}
+.tm-placeholder {
+  width: 100%;
+  height: 100%;
+  min-height: 260px;
+  background: linear-gradient(135deg, #00444f 0%, #222b33 100%);
+}
+
+/* ============ Common ============ */
+.tm-eyebrow {
+  display: block;
+  margin-bottom: clamp(10px, 1vw, 18px);
+  font-size: clamp(13px, 1vw, 19px);
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #9a7400;
+}
+.tm-btn {
+  display: inline-block;
+  padding: clamp(14px, 1.1vw, 20px) clamp(28px, 2.6vw, 50px);
+  background: #ffc400;
+  color: #1b1b1b;
+  font-size: clamp(15px, 1.1vw, 20px);
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.tm-btn:hover {
+  background: #e0a800;
+}
+
+/* ============ 1. Hero (80vh) ============ */
+.tm-hero {
+  position: relative;
+  width: 100%;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: linear-gradient(135deg, #00444f 0%, #222b33 100%);
+  color: #fff;
+}
+.tm-hero__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.tm-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 30, 36, 0.62);
+}
+.tm-hero__content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: clamp(50px, 6vw, 110px) clamp(20px, 2.2vw, 42px);
+  text-align: center;
+}
+.tm-hero h1 {
+  margin-bottom: clamp(14px, 1.4vw, 26px);
+  font: 800 clamp(30px, 4.6vw, 88px) / 1.1 "Inter", sans-serif;
+  letter-spacing: -0.05em;
+}
+.tm-hero p {
+  font-size: clamp(14px, 1.3vw, 24px);
+  line-height: 1.6;
+}
+
+/* ============ Breadcrumb ============ */
+.tm-crumbs-bar {
+  width: 100%;
+  padding: clamp(22px, 2.2vw, 40px) clamp(20px, 2.2vw, 42px) 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(14px, 1.6vw, 30px);
+  background: #fff;
+}
+.tm-crumbs ol {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: clamp(10px, 1vw, 18px);
+  font-size: clamp(16px, 1.17vw, 22px);
+  font-weight: 500;
+}
+.tm-crumbs a {
+  color: #00444f;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.tm-crumbs a:hover {
+  color: #e0a800;
+}
+.tm-crumbs__arrow {
+  display: inline-flex;
+  color: #e0a800;
+}
+.tm-crumbs__arrow svg {
+  width: clamp(18px, 1.4vw, 26px);
+  height: clamp(18px, 1.4vw, 26px);
+}
+.tm-pagetitle {
+  text-align: center;
+  font: 800 clamp(40px, 4.6vw, 88px) / 1.05 "Inter", sans-serif;
+  letter-spacing: -0.05em;
+  color: #00444f;
+}
+
+/* ============ 2. About Leadership (pic text ke barabar) ============ */
+.tm-about {
+  width: 100%;
+  padding: clamp(40px, 5vw, 100px) clamp(20px, 3.4vw, 64px);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch; /* pic text ki height tak barhegi */
+  gap: clamp(30px, 5vw, 100px);
+  background: #fff;
+}
+.tm-about__media {
+  position: relative;
+  min-height: 320px;
+}
+.tm-about__media img,
+.tm-about__media .tm-placeholder {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  object-fit: cover;
+}
+.tm-about__text {
+  align-self: center;
+}
+.tm-about__text h2 {
+  margin-bottom: clamp(16px, 1.8vw, 32px);
+  font: 800 clamp(30px, 3.4vw, 64px) / 1.12 "Inter", sans-serif;
+  letter-spacing: -0.05em;
+  color: #00444f;
+}
+.tm-about__text > p {
+  font-size: clamp(16px, 1.2vw, 22px);
+  line-height: 1.7;
+  color: #777;
+}
+
+/* Stats: icon + number + label */
+.tm-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(28px, 4vw, 80px);
+  margin-top: clamp(24px, 3vw, 56px);
+}
+.tm-stat {
+  display: flex;
+  align-items: center;
+  gap: clamp(14px, 1.4vw, 24px);
+}
+.tm-stat__icon {
+  flex: 0 0 auto;
+  width: clamp(56px, 5vw, 92px);
+  height: clamp(56px, 5vw, 92px);
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #00444f;
+  color: #ffc400;
+}
+.tm-stat__icon svg {
+  width: 50%;
+  height: 50%;
+}
+.tm-stat strong {
+  display: block;
+  font: 800 clamp(40px, 4.2vw, 80px) / 1 "Inter", sans-serif;
+  letter-spacing: -0.05em;
+  color: #00444f;
+}
+.tm-stat div > span {
+  display: block;
+  margin-top: 6px;
+  font-size: clamp(15px, 1.1vw, 20px);
+  color: #777;
+}
+
+/* ============ 3. Our Leadership (2 row x 4) ============ */
+.tm-leaders {
+  width: 100%;
+  padding: clamp(40px, 5vw, 100px) clamp(20px, 3.4vw, 64px);
+  background: #f7f7f7;
+}
+/* heading center */
+.tm-leaders > .tm-eyebrow,
+.tm-leaders > h2 {
+  text-align: center;
+}
+.tm-leaders h2 {
+  margin-bottom: clamp(28px, 3vw, 56px);
+  font: 800 clamp(30px, 3.4vw, 64px) / 1.12 "Inter", sans-serif;
+  letter-spacing: -0.05em;
+  color: #00444f;
+}
+.tm-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(20px, 2vw, 40px);
+}
+
+/* pic hover: zoom + halka dark overlay */
+.tm-card__media {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 18px;
+}
+.tm-card__media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 68, 79, 0.35);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+.tm-card:hover .tm-card__media::after {
+  opacity: 1;
+}
+.tm-card__img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: top; /* photo ka oopar wala hissa dikhega */
+  transition: transform 0.5s ease;
+}
+.tm-card:hover .tm-card__img {
+  transform: scale(1.08);
+}
+
+.tm-card h3 {
+  font: 800 clamp(20px, 1.6vw, 30px) / 1.2 "Inter", sans-serif;
+  letter-spacing: -0.03em;
+  color: #00444f;
+}
+.tm-card__role {
+  display: block;
+  margin: 6px 0 14px;
+  font-size: clamp(15px, 1.1vw, 20px);
+  color: #777;
+}
+.tm-card__social {
+  display: flex;
+  gap: 10px;
+}
+.tm-card__social a {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #00444f;
+  color: #fff;
+  transition: background 0.2s, color 0.2s;
+}
+.tm-card__social a:hover {
+  background: #ffc400;
+  color: #1b1b1b;
+}
+.tm-card__social svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* ============ 4. Shape a better world ============ */
+.tm-shape {
+  width: 100%;
+  padding: clamp(40px, 5vw, 100px) clamp(20px, 3.4vw, 64px);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: clamp(30px, 5vw, 100px);
+  background: #fff;
+}
+.tm-shape__media img,
+.tm-shape__media .tm-placeholder {
+  display: block;
+  width: 100%;
+  height: clamp(320px, 38vw, 700px);
+  object-fit: cover;
+}
+.tm-shape__text h2 {
+  margin-bottom: clamp(16px, 1.8vw, 32px);
+  font: 800 clamp(30px, 3.4vw, 64px) / 1.12 "Inter", sans-serif;
+  letter-spacing: -0.05em;
+  color: #00444f;
+}
+.tm-shape__text h3 {
+  margin-bottom: clamp(14px, 1.4vw, 26px);
+  font: 500 clamp(18px, 1.5vw, 28px) / 1.5 "Roboto", sans-serif;
+  color: #00444f;
+}
+.tm-shape__text > p {
+  margin-bottom: clamp(24px, 2.4vw, 44px);
+  font-size: clamp(16px, 1.2vw, 22px);
+  line-height: 1.7;
+  color: #777;
+}
+
+/* ============ 5. Career + quote (80vh) ============ */
+.tm-cta {
+  position: relative;
+  width: 100%;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: linear-gradient(135deg, #00444f 0%, #222b33 100%);
+  color: #fff;
+}
+.tm-cta__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.tm-cta__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 30, 36, 0.7);
+}
+.tm-cta__inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: clamp(50px, 6vw, 120px) clamp(20px, 3.4vw, 64px);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: clamp(30px, 5vw, 100px);
+}
+.tm-cta__left h2 {
+  margin-bottom: clamp(12px, 1.4vw, 24px);
+  font: 800 clamp(30px, 3.6vw, 68px) / 1.1 "Inter", sans-serif;
+  letter-spacing: -0.05em;
+}
+.tm-cta__left p {
+  margin-bottom: clamp(20px, 2.2vw, 40px);
+  font-size: clamp(16px, 1.3vw, 24px);
+  line-height: 1.6;
+}
+.tm-cta__right p {
+  margin-bottom: 18px;
+  font: 500 clamp(20px, 2vw, 38px) / 1.4 "Inter", sans-serif;
+  letter-spacing: -0.02em;
+}
+.tm-cta__right cite {
+  font-size: clamp(15px, 1.2vw, 22px);
+  font-style: normal;
+  color: #ffc400;
+}
+
+/* ============ Responsive ============ */
+@media (max-width: 1000px) {
+  .tm-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 800px) {
+  .tm-about,
+  .tm-shape,
+  .tm-cta__inner {
+    grid-template-columns: 1fr;
+  }
+  .tm-about__media {
+    min-height: 300px;
+  }
+}
+@media (max-width: 480px) {
+  .tm-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@700;800&family=Roboto:wght@400;500&display=swap");
+
+.about,
+.about * {
+  box-sizing: border-box;
+}
+.about {
+  width: 100%;
+  padding: clamp(60px, 7vw, 130px) clamp(20px, 2.2vw, 42px);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: clamp(32px, 6vw, 120px);
+  background: #f7f7f7;
+  font-family: "Roboto", Arial, sans-serif;
+}
+
+/* ---------- Image ---------- */
+.about__media {
+  width: 100%;
+}
+.about__media img,
+.about__placeholder {
+  width: 100%;
+  aspect-ratio: 4 / 3.2;
+  object-fit: cover;
+  display: block;
+}
+.about__placeholder {
+  background: linear-gradient(135deg, #00444f 0%, #222b33 100%);
+}
+
+/* ---------- Text ---------- */
+.about__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: clamp(16px, 1.5vw, 28px);
+  font-size: clamp(14px, 1.06vw, 20px);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #e0a800;
+  font-weight: 500;
+}
+.about h2 {
+  margin: 0 0 clamp(20px, 2vw, 36px);
+  font: 700 clamp(32px, 3.05vw, 58px) / 1.2 "Inter", sans-serif;
+  letter-spacing: -0.05em;
+  color: #00444f;
+}
+.about p {
+  margin: 0 0 clamp(14px, 1.2vw, 22px);
+  max-width: 52ch;
+  font-size: clamp(16px, 1.17vw, 22px);
+  line-height: 1.64;
+  color: #2b2b2b;
+}
+.about__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: clamp(16px, 1.3vw, 25px);
+  margin-top: clamp(14px, 1.4vw, 26px);
+  height: clamp(58px, 3.8vw, 72px);
+  padding: 0 clamp(26px, 2.4vw, 45px);
+  background: #ffc400;
+  color: #1b1b1b;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: clamp(18px, 1.25vw, 23px);
+  transition: background 0.2s;
+}
+.about__btn:hover {
+  background: #ffd23d;
+}
+.about__btn:focus-visible {
+  outline: 3px solid #00444f;
+  outline-offset: 2px;
+}
+.about__btn svg {
+  width: 24px;
+  height: 24px;
+}
+
+@media (max-width: 900px) {
+  .about {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Delivering results (About ka neeche wala hissa, center mein) ---------- */
+.about__lead {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: clamp(16px, 1.6vw, 30px);
+  margin-top: clamp(20px, 4vw, 80px);
+}
+.about__lead h3 {
+  margin: 0;
+  max-width: 24ch;
+  font: 700 clamp(28px, 3.05vw, 58px) / 1.2 "Inter", sans-serif;
+  letter-spacing: -0.05em;
+  color: #00444f;
+}
+.about__lead p {
+  margin: 0;
+  max-width: 56ch;
+}

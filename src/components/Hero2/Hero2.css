@@ -1,0 +1,257 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@700;800&family=Roboto:wght@400;500&display=swap");
+
+.hero2,
+.hero2 *,
+.hero2-features,
+.hero2-features *,
+.hero2-lead,
+.hero2-lead * {
+  box-sizing: border-box;
+}
+
+/* ===================== Slider ===================== */
+.hero2 {
+  --overlap: clamp(50px, 5vw, 96px); /* features bar hero ke neeche kitna chadhe */
+  position: relative;
+  width: 100%;
+  display: grid;
+  overflow: hidden;
+  background: linear-gradient(135deg, #00444f 0%, #222b33 100%);
+  color: #fff;
+  font-family: "Roboto", Arial, sans-serif;
+}
+.hero2__slide {
+  grid-area: 1 / 1; /* sab slides ek hi jagah par, upar neeche */
+  position: relative;
+  min-height: clamp(540px, 86vh, 940px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s ease, visibility 1s;
+}
+.hero2__slide.is-active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 1;
+}
+
+/* background picture: slow zoom (sirf active slide par) */
+.hero2__bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+.hero2__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1);
+  will-change: transform;
+}
+.hero2__slide.is-active .hero2__img {
+  animation: hero2-zoom 9s ease-out forwards;
+}
+@keyframes hero2-zoom {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.16);
+  }
+}
+.hero2__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 30, 36, 0.58);
+}
+
+/* ---------- Text (center) ---------- */
+.hero2__content {
+  position: relative;
+  z-index: 1;
+  width: min(1000px, 100% - 40px);
+  padding: clamp(60px, 7vw, 120px) 0 calc(var(--overlap) + clamp(50px, 5vw, 90px));
+  opacity: 0;
+  transform: translateY(36px);
+}
+.hero2__slide.is-active .hero2__content {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.9s ease 0.35s, transform 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.35s;
+}
+.hero2 h1,
+.hero2 h2 {
+  margin: 0 0 clamp(16px, 1.6vw, 30px);
+  font: 800 clamp(40px, 5.4vw, 104px) / 1.04 "Inter", sans-serif;
+  letter-spacing: -0.05em;
+}
+.hero2 p {
+  margin: 0 auto clamp(26px, 2.6vw, 50px);
+  max-width: 44ch;
+  font-size: clamp(17px, 1.4vw, 26px);
+  line-height: 1.6;
+  color: #e6eef0;
+}
+.hero2__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: clamp(16px, 1.3vw, 25px);
+  height: clamp(58px, 3.8vw, 72px);
+  padding: 0 clamp(26px, 2.4vw, 45px);
+  background: #ffc400;
+  color: #1b1b1b;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: clamp(18px, 1.25vw, 23px);
+  transition: background 0.2s;
+}
+.hero2__btn:hover {
+  background: #ffd23d;
+}
+.hero2__btn:focus-visible {
+  outline: 3px solid #ffc400;
+  outline-offset: 3px;
+}
+.hero2__btn svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* ---------- Dots ---------- */
+.hero2__dots {
+  position: absolute;
+  z-index: 3;
+  left: 0;
+  right: 0;
+  bottom: calc(var(--overlap) + 22px);
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.hero2__dots button {
+  width: 12px;
+  height: 12px;
+  padding: 0;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.25s, transform 0.25s;
+}
+.hero2__dots button.is-active {
+  background: #ffc400;
+  border-color: #ffc400;
+  transform: scale(1.2);
+}
+.hero2__dots button:focus-visible {
+  outline: 3px solid #ffc400;
+  outline-offset: 3px;
+}
+
+/* ===================== Solution / Reliable / Support ===================== */
+.hero2-features {
+  --overlap: clamp(50px, 5vw, 96px);
+  position: relative;
+  z-index: 4;
+ width: 100%;
+margin: calc(var(--overlap) * -1) 0 0;
+  box-shadow: 0 24px 70px rgba(0, 30, 36, 0.18);
+  font-family: "Roboto", Arial, sans-serif;
+}
+.hero2-features ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: clamp(12px, 1.4vw, 28px);
+  grid-template-columns: repeat(3, 1fr);
+}
+.hero2-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(16px, 1.5vw, 28px);
+  padding: clamp(26px, 2.6vw, 50px);
+}
+/* teeno ka alag background, text white */
+.hero2-features li:nth-child(1) {
+  background: #00444f; /* Solution - teal */
+}
+.hero2-features li:nth-child(2) {
+  background: #222b33; /* Reliable - charcoal */
+}
+.hero2-features li:nth-child(3) {
+  background: #1f6f5c; /* Support - green */
+}
+.hero2-features__icon {
+  flex: none;
+  width: clamp(54px, 4.2vw, 80px);
+  height: clamp(54px, 4.2vw, 80px);
+  display: grid;
+  place-items: center;
+  background: #ffc400;
+  color: #1b1b1b;
+}
+.hero2-features__icon svg {
+  width: 52%;
+  height: 52%;
+}
+.hero2-features h3 {
+  margin: 0 0 10px;
+  font: 700 clamp(22px, 1.8vw, 34px) / 1.15 "Inter", sans-serif;
+  letter-spacing: -0.04em;
+  color: #fff;
+}
+.hero2-features p {
+  margin: 0;
+  font-size: clamp(15px, 1.06vw, 20px);
+  line-height: 1.6;
+  color: #fff;
+}
+
+/* ===================== Delivering results (center) ===================== */
+.hero2-lead {
+  width: 100%;
+  padding: clamp(60px, 7vw, 130px) clamp(20px, 2.2vw, 42px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: clamp(16px, 1.6vw, 30px);
+  background: #fff;
+  font-family: "Roboto", Arial, sans-serif;
+}
+.hero2-lead h2 {
+  margin: 0;
+  max-width: 24ch;
+  font: 700 clamp(30px, 3.05vw, 58px) / 1.2 "Inter", sans-serif;
+  letter-spacing: -0.05em;
+  color: #00444f;
+}
+.hero2-lead p {
+  margin: 0;
+  max-width: 56ch;
+  font-size: clamp(16px, 1.17vw, 22px);
+  line-height: 1.64;
+  color: #2b2b2b;
+}
+
+/* ===================== Responsive ===================== */
+@media (max-width: 900px) {
+  .hero2-features ul {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero2__slide,
+  .hero2__slide.is-active .hero2__content {
+    transition: none;
+  }
+  .hero2__slide.is-active .hero2__img {
+    animation: none;
+  }
+}

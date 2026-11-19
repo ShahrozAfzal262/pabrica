@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@700;800&family=Roboto:wght@400&display=swap");
+
+.brands,
+.brands * {
+  box-sizing: border-box;
+}
+.brands {
+  width: 100%;
+  padding: clamp(60px, 8vw, 150px) clamp(20px, 2.2vw, 42px);
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  align-items: center;
+  gap: clamp(32px, 6vw, 120px);
+  background: #fff;
+  font-family: "Roboto", Arial, sans-serif;
+}
+
+/* ---------- Text ---------- */
+.brands h2 {
+  margin: 0 0 clamp(22px, 2vw, 38px);
+  font: 700 clamp(32px, 3.05vw, 58px) / 1.28 "Inter", sans-serif;
+  letter-spacing: -0.05em;
+  color: #00444f;
+}
+.brands p {
+  margin: 0;
+  max-width: 46ch;
+  font-size: clamp(16px, 1.17vw, 22px);
+  line-height: 1.64;
+  color: #2b2b2b;
+}
+
+/* ---------- Logo grid (3 x 3) ---------- */
+.brands__grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: clamp(36px, 5.6vw, 106px);
+  align-items: center;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #3a444c;
+  min-height: 60px;
+}
+.brand svg {
+  width: clamp(24px, 2vw, 38px);
+  height: clamp(24px, 2vw, 38px);
+  flex: none;
+}
+.brand span {
+  font: 700 clamp(16px, 1.35vw, 26px) / 1 "Inter", sans-serif;
+  letter-spacing: -0.03em;
+}
+.brand img {
+  max-width: 100%;
+  max-height: 60px;
+  object-fit: contain;
+}
+
+/* Logo styles */
+.brand--block span {
+  font-weight: 800;
+  font-size: clamp(26px, 2.5vw, 48px);
+  letter-spacing: 0.02em;
+}
+.brand--thin span {
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+.brand--spaced span {
+  font-size: clamp(12px, 1vw, 19px);
+  letter-spacing: 0.22em;
+  font-weight: 700;
+}
+.brand--stack {
+  flex-direction: column;
+  gap: 4px;
+}
+.brand--stack svg {
+  width: clamp(50px, 4.2vw, 80px);
+  height: clamp(24px, 2vw, 38px);
+}
+
+/* ---------- Tablet / Mobile ---------- */
+@media (max-width: 1024px) {
+  .brands {
+    grid-template-columns: 1fr;
+  }
+  .brands p {
+    max-width: 60ch;
+  }
+}
+@media (max-width: 520px) {
+  .brands__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ---------- Scroll animation: logos neeche se upar aate hain ---------- */
+.brands__grid .brand {
+  opacity: 0;
+  transform: translateY(48px);
+}
+.brands__grid.is-visible .brand {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.7s ease, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: calc(var(--i) * 0.12s); /* ek ke baad ek */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brands__grid .brand {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

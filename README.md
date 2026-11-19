@@ -1,0 +1,1 @@
+# Pabrica\n\nReact + Vite project structure. Component and page files are intentionally empty; website coding will be added later.\n\nRun `npm install` then `npm run dev`.\n

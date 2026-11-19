@@ -1,0 +1,128 @@
+
+.not-found-page {
+  width: 100%;
+  min-height: 650px;
+  padding: 35px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image:
+    linear-gradient(
+      rgba(0, 39, 51, 0.68),
+      rgba(0, 39, 51, 0.68)
+    ),
+    url("https://new.creativemox.com/pabrica/wp-content/uploads/sites/26/2025/12/industrial-worker-cutting-and-welding-metal-with-m-2024-11-03-00-54-40-utc2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.not-found-overlay {
+  width: 100%;
+  max-width: 760px;
+  min-height: 540px;
+  padding: 40px 25px;
+  background: rgba(255, 255, 255, 0.88);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.not-found-content {
+  width: 100%;
+}
+
+.not-found-icon {
+  width: 105px;
+  height: 105px;
+  margin: 0 auto 28px;
+  color: #004554;
+}
+
+.not-found-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.not-found-content h1 {
+  color: #004554;
+  font-size: clamp(42px, 5vw, 68px);
+  line-height: 1.18;
+  font-weight: 800;
+  margin: 0 0 22px;
+}
+
+.not-found-content p {
+  color: #003e4d;
+  font-size: clamp(17px, 2vw, 25px);
+  line-height: 1.6;
+  font-weight: 400;
+  margin: 0 0 28px;
+}
+
+.not-found-home-btn {
+  min-width: 230px;
+  min-height: 65px;
+  padding: 16px 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  background: #ffbd00;
+  color: #142d30;
+  font-size: 21px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.not-found-home-btn:hover {
+  background: #fea928;
+  color: #142d30;
+  transform: translateY(-3px);
+}
+
+.not-found-arrow {
+  font-size: 28px;
+  line-height: 1;
+}
+
+/* Responsive */
+
+@media (max-width: 600px) {
+  .not-found-page {
+    min-height: 550px;
+    padding: 25px 14px;
+  }
+
+  .not-found-overlay {
+    min-height: 440px;
+    padding: 35px 18px;
+  }
+
+  .not-found-icon {
+    width: 85px;
+    height: 85px;
+    margin-bottom: 24px;
+  }
+
+  .not-found-content h1 {
+    font-size: 38px;
+    margin-bottom: 18px;
+  }
+
+  .not-found-content p {
+    font-size: 16px;
+  }
+
+  .not-found-desktop-break {
+    display: none;
+  }
+
+  .not-found-home-btn {
+    min-width: 200px;
+    min-height: 58px;
+    font-size: 18px;
+  }
+}

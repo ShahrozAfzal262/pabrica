@@ -1,0 +1,257 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@700;800&family=Roboto:wght@400;500&display=swap");
+
+.lp,
+.lp * {
+  box-sizing: border-box;
+}
+
+.lp {
+  width: 100%;
+  padding: clamp(60px, 7vw, 130px) clamp(20px, 2.2vw, 42px);
+  background: #fff;
+  font-family: "Roboto", Arial, sans-serif;
+}
+
+/* ---------- Heading ---------- */
+
+.lp__head {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: end;
+  gap: clamp(24px, 6vw, 120px);
+  margin-bottom: clamp(36px, 4vw, 76px);
+}
+
+.lp__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: clamp(14px, 1.4vw, 26px);
+  font-size: clamp(13px, 1vw, 19px);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #e0a800;
+  font-weight: 500;
+}
+
+.lp h2 {
+  margin: 0;
+  font: 800 clamp(40px, 4.4vw, 84px) / 1.05 "Inter", sans-serif;
+  letter-spacing: -0.05em;
+  color: #00444f;
+}
+
+.lp__intro p {
+  margin: 0 0 clamp(20px, 1.8vw, 34px);
+  max-width: 46ch;
+  font-size: clamp(16px, 1.17vw, 22px);
+  line-height: 1.64;
+  color: #2b2b2b;
+}
+
+.lp__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: clamp(16px, 1.3vw, 25px);
+  height: clamp(58px, 3.8vw, 72px);
+  padding: 0 clamp(26px, 2.4vw, 45px);
+  background: #ffc400;
+  color: #1b1b1b;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: clamp(18px, 1.25vw, 23px);
+  transition: background 0.2s;
+}
+
+.lp__btn:hover {
+  background: #ffd23d;
+}
+
+.lp__btn svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* ---------- Project Cards ---------- */
+
+.lp__grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(14px, 1.4vw, 28px);
+}
+
+.lp__card {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  aspect-ratio: 3 / 4.1;
+  background: linear-gradient(135deg, #00444f 0%, #222b33 100%);
+  color: #fff;
+}
+
+.lp__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+
+/* Dark overlay */
+.lp__card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 20, 26, 0.92) 0%,
+    rgba(0, 20, 26, 0.55) 48%,
+    rgba(0, 20, 26, 0.05) 100%
+  );
+  pointer-events: none;
+}
+
+/* Image hover effect */
+.lp__card:hover .lp__img {
+  transform: scale(1.07);
+}
+
+/* ---------- Card Content ---------- */
+
+.lp__body {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: clamp(20px, 1.9vw, 36px);
+}
+
+.lp__body h3 {
+  margin: 0 0 12px;
+  font: 700 clamp(22px, 1.8vw, 34px) / 1.2 "Inter", sans-serif;
+  letter-spacing: -0.04em;
+  color: #fff;
+}
+
+/* Description and button always visible */
+.lp__more {
+  display: block;
+  grid-template-rows: 1fr;
+  opacity: 1;
+  visibility: visible;
+  max-height: none;
+  height: auto;
+  overflow: visible;
+  transform: none;
+}
+
+.lp__more-inner {
+  display: block;
+  min-height: auto;
+  overflow: visible;
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+
+.lp__more-inner p {
+  margin: 0;
+  font-size: clamp(14px, 1vw, 17px);
+  line-height: 1.6;
+  color: #e6eef0;
+}
+
+/* ---------- Detail Project Button ---------- */
+
+.lp__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  height: clamp(45px, 3.2vw, 56px);
+  margin-top: clamp(16px, 1.6vw, 24px);
+  padding: 0 clamp(18px, 1.8vw, 28px);
+  background: #ffc400;
+  color: #1b1b1b;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: clamp(14px, 1.06vw, 18px);
+  transition: background 0.2s ease;
+  opacity: 1;
+  visibility: visible;
+}
+
+.lp__link:hover {
+  background: #ffd23d;
+}
+
+.lp__link svg {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.2s;
+}
+
+.lp__link:hover svg {
+  transform: translateX(5px);
+}
+
+/* Hover par bhi content visible rahe */
+.lp__card:hover .lp__more,
+.lp__card:focus-within .lp__more {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  max-height: none;
+}
+
+.lp__link:focus-visible,
+.lp__btn:focus-visible {
+  outline: 3px solid #00444f;
+  outline-offset: 3px;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 1100px) {
+  .lp__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .lp__head {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+}
+
+@media (max-width: 560px) {
+  .lp__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lp__card {
+    aspect-ratio: 3 / 3.5;
+  }
+}
+
+.lp__img {
+  transition: transform 0.7s ease;
+}
+
+.lp__body {
+  transition: transform 0.7s ease;
+  transform-origin: center bottom;
+}
+
+.lp__card:hover .lp__img {
+  transform: scale(1.08);
+}
+
+.lp__card:hover .lp__body {
+  transform: scale(1.08);
+}

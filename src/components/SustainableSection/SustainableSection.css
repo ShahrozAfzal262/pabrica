@@ -1,0 +1,145 @@
+
+.sustain {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 480px;
+  overflow: hidden;
+}
+
+/* LEFT TEXT SIDE */
+.sustain__content {
+  background-color: #555555;
+  padding: 45px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sustain__label {
+  color: #f2a900;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 18px;
+}
+
+.sustain__content h2 {
+  color: #ffffff;
+  font-size: clamp(30px, 3vw, 44px);
+  line-height: 1.2;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.sustain__content h3 {
+  color: #ffffff;
+  font-size: 17px;
+  line-height: 1.5;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.sustain__content p {
+  color: #eeeeee;
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 22px;
+}
+
+/* BUTTON */
+.sustain__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: fit-content;
+  padding: 14px 23px;
+  background-color: #f2a900;
+  color: #073e50;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  transition: 0.3s ease;
+}
+
+.sustain__btn:hover {
+  background-color: #ffffff;
+  transform: translateY(-3px);
+}
+
+.sustain__btn span {
+  font-size: 19px;
+}
+
+/* RIGHT IMAGE SIDE */
+.sustain__media {
+  width: 100%;
+  min-height: 480px;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.sustain__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 480px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.sustain__placeholder {
+  width: 100%;
+  height: 100%;
+  min-height: 480px;
+  background: #ffffff;
+}
+
+/* TABLET */
+@media (max-width: 900px) {
+  .sustain {
+    grid-template-columns: 1fr 1fr;
+    min-height: 430px;
+  }
+
+  .sustain__content {
+    padding: 35px 25px;
+  }
+
+  .sustain__content h2 {
+    font-size: 32px;
+  }
+
+  .sustain__content h3 {
+    font-size: 16px;
+  }
+
+  .sustain__media,
+  .sustain__media img,
+  .sustain__placeholder {
+    min-height: 430px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 650px) {
+  .sustain {
+    grid-template-columns: 1fr;
+  }
+
+  .sustain__content {
+    padding: 45px 25px;
+    min-height: auto;
+  }
+
+  .sustain__content h2 {
+    font-size: 32px;
+  }
+
+  .sustain__media,
+  .sustain__media img,
+  .sustain__placeholder {
+    min-height: 300px;
+  }
+}

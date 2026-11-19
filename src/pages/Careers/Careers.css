@@ -1,0 +1,656 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@700;800&family=Roboto:wght@400;500&display=swap");
+
+/* =====================================================================
+   Careers page: sab sections ki CSS isi ek file mein
+   ===================================================================== */
+.cr,
+.cr * {
+  box-sizing: border-box;
+}
+.cr {
+  width: 100%;
+  overflow-x: clip;
+  font-family: "Roboto", Arial, sans-serif;
+}
+.cr h1,
+.cr h2,
+.cr h3,
+.cr p,
+.cr ul,
+.cr ol,
+.cr blockquote {
+  margin: 0;
+  padding: 0;
+}
+.cr ul,
+.cr ol {
+  list-style: none;
+}
+
+/* ---------- shared ---------- */
+.cr-eyebrow {
+  display: block;
+  margin-bottom: clamp(14px, 1.4vw, 26px);
+  font-size: clamp(13px, 1vw, 19px);
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #e0a800;
+}
+.cr-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: clamp(16px, 1.3vw, 25px);
+  height: clamp(58px, 3.8vw, 72px);
+  padding: 0 clamp(26px, 2.4vw, 45px);
+  background: #ffc400;
+  color: #1b1b1b;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: clamp(18px, 1.25vw, 23px);
+  transition: background 0.2s;
+}
+.cr-btn:hover {
+  background: #ffd23d;
+}
+.cr-btn svg {
+  width: 24px;
+  height: 24px;
+}
+.cr a:focus-visible {
+  outline: 3px solid #ffc400;
+  outline-offset: 3px;
+}
+.cr-placeholder {
+  width: 100%;
+  aspect-ratio: 4 / 3.2;
+  background: linear-gradient(135deg, #00444f 0%, #222b33 100%);
+}
+.cr-center {
+  width: 100%;
+  padding: clamp(60px, 7vw, 130px) clamp(20px, 2.2vw, 42px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* =====================================================================
+   1. Hero (screen ka 70%)
+   ===================================================================== */
+.cr-hero {
+  position: relative;
+  width: 100%;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: linear-gradient(135deg, #00444f 0%, #222b33 100%);
+  color: #fff;
+}
+.cr-hero__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.cr-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 30, 36, 0.62);
+}
+.cr-hero__content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: clamp(50px, 6vw, 110px) clamp(20px, 2.2vw, 42px);
+  text-align: center;
+}
+.cr-hero h1 {
+  margin-bottom: clamp(14px, 1.4vw, 26px);
+  font: 800 clamp(30px, 4.6vw, 88px) / 1.1 "Inter", sans-serif;
+  letter-spacing: -0.05em;
+  white-space: nowrap; /* heading ek line mein */
+}
+.cr-hero p {
+  font-size: clamp(14px, 1.3vw, 24px);
+  line-height: 1.6;
+  white-space: nowrap; /* paragraph ek line mein */
+}
+
+/* Home -> Careers */
+.cr-crumbs-bar {
+  width: 100%;
+  padding: clamp(22px, 2.2vw, 40px) clamp(20px, 2.2vw, 42px) 0;
+  display: flex;
+  justify-content: center;
+  background: #fff;
+}
+.cr-crumbs ol {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: clamp(10px, 1vw, 18px);
+  font-size: clamp(16px, 1.17vw, 22px);
+  font-weight: 500;
+  color: #2b2b2b;
+}
+.cr-crumbs a {
+  color: #00444f;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.cr-crumbs a:hover {
+  color: #e0a800;
+}
+.cr-crumbs__arrow {
+  display: inline-flex;
+  color: #e0a800;
+}
+.cr-crumbs__arrow svg {
+  width: clamp(18px, 1.4vw, 26px);
+  height: clamp(18px, 1.4vw, 26px);
+}
+
+/* =====================================================================
+   2. Career at Pabrica (center)
+   ===================================================================== */
+.cr-intro {
+  background: #fff;
+  padding-top: clamp(24px, 2.8vw, 56px);
+}
+.cr-intro h2 {
+  margin-bottom: clamp(16px, 1.6vw, 30px);
+  max-width: 22ch;
+  font: 800 clamp(34px, 4vw, 76px) / 1.1 "Inter", sans-serif;
+  letter-spacing: -0.05em;
+  color: #00444f;
+}
+.cr-intro p {
+  margin-bottom: clamp(24px, 2.4vw, 46px);
+  max-width: 62ch;
+  font-size: clamp(16px, 1.17vw, 22px);
+  line-height: 1.7;
+  color: #2b2b2b;
+}
+
+/* =====================================================================
+   3 + 6. Join Us / Benefit (text + picture)
+   ===================================================================== */
+.cr-split {
+  width: 100%;
+  padding: clamp(60px, 7vw, 130px) clamp(20px, 2.2vw, 42px);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: clamp(32px, 6vw, 120px);
+}
+.cr-join {
+  background: #f7f7f7;
+}
+.cr-benefit {
+  background: #fff;
+}
+.cr-split h2 {
+  margin-bottom: clamp(20px, 2vw, 36px);
+  font: 700 clamp(32px, 3.4vw, 64px) / 1.15 "Inter", sans-serif;
+  letter-spacing: -0.05em;
+  color: #00444f;
+}
+.cr-split__text p {
+  margin-bottom: clamp(14px, 1.2vw, 22px);
+  max-width: 52ch;
+  font-size: clamp(16px, 1.17vw, 22px);
+  line-height: 1.64;
+  color: #2b2b2b;
+}
+.cr-split__text .cr-btn {
+  margin-top: clamp(14px, 1.4vw, 26px);
+}
+.cr-split__media img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3.2;
+  object-fit: cover;
+}
+
+/* =====================================================================
+   4. Open Positions
+   ===================================================================== */
+.cr-jobs {
+  width: 100%;
+  padding: clamp(60px, 7vw, 130px) clamp(20px, 2.2vw, 42px);
+  background: #fff;
+}
+.cr-jobs__head {
+  margin: 0 auto clamp(36px, 4vw, 76px);
+  max-width: 760px;
+  text-align: center;
+}
+.cr-jobs h2 {
+  margin-bottom: clamp(14px, 1.4vw, 26px);
+  font: 800 clamp(34px, 4vw, 76px) / 1.1 "Inter", sans-serif;
+  letter-spacing: -0.05em;
+  color: #00444f;
+}
+.cr-jobs__head p {
+  font-size: clamp(16px, 1.17vw, 22px);
+  line-height: 1.64;
+  color: #2b2b2b;
+}
+.cr-jobs__list {
+  border-top: 1px solid #d9d9d9;
+}
+.cr-job {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr auto;
+  align-items: center;
+  gap: clamp(16px, 2.4vw, 46px);
+  padding: clamp(22px, 2.2vw, 42px) clamp(8px, 1vw, 20px);
+  border-bottom: 1px solid #d9d9d9;
+  transition: background 0.25s;
+}
+.cr-job:hover {
+  background: #f7f7f7;
+}
+.cr-job h3 {
+  font: 700 clamp(20px, 1.8vw, 34px) / 1.2 "Inter", sans-serif;
+  letter-spacing: -0.04em;
+  color: #00444f;
+}
+.cr-job__place {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: clamp(15px, 1.17vw, 22px);
+  color: #4a4a4a;
+}
+.cr-job__place svg {
+  width: clamp(18px, 1.4vw, 26px);
+  height: clamp(18px, 1.4vw, 26px);
+  flex: none;
+  color: #e0a800;
+}
+.cr-job__apply {
+  display: inline-flex;
+  align-items: center;
+  height: clamp(46px, 3.2vw, 60px);
+  padding: 0 clamp(24px, 2.2vw, 42px);
+  background: #ffc400;
+  color: #1b1b1b;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: clamp(16px, 1.17vw, 21px);
+  transition: background 0.2s;
+}
+.cr-job__apply:hover {
+  background: #ffd23d;
+}
+
+/* =====================================================================
+   5. Fuelled by passionate people
+   ===================================================================== */
+.cr-perks {
+  width: 100%;
+  padding: clamp(60px, 7vw, 130px) clamp(20px, 2.2vw, 42px);
+  background: #00444f;
+  color: #fff;
+}
+.cr-perks h2 {
+  margin: 0 auto clamp(40px, 4.5vw, 86px);
+  max-width: 20ch;
+  text-align: center;
+  font: 800 clamp(34px, 4vw, 76px) / 1.1 "Inter", sans-serif;
+  letter-spacing: -0.05em;
+}
+.cr-perks__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(14px, 1.4vw, 28px);
+}
+.cr-perk {
+  padding: clamp(24px, 2.4vw, 46px);
+  background: #0a5663;
+  border-bottom: 4px solid transparent;
+  transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+}
+.cr-perk:hover {
+  transform: translateY(-6px);
+  background: #0d6170;
+  border-bottom-color: #ffc400;
+}
+.cr-perk__icon {
+  display: grid;
+  place-items: center;
+  width: clamp(56px, 4.4vw, 84px);
+  height: clamp(56px, 4.4vw, 84px);
+  margin-bottom: clamp(18px, 1.8vw, 32px);
+  background: #ffc400;
+  color: #00444f;
+  transition: background 0.3s;
+}
+.cr-perk__icon svg {
+  width: 50%;
+  height: 50%;
+}
+.cr-perk:hover .cr-perk__icon {
+  background: #fff;
+}
+.cr-perk h3 {
+  margin-bottom: 12px;
+  font: 700 clamp(20px, 1.7vw, 32px) / 1.2 "Inter", sans-serif;
+  letter-spacing: -0.04em;
+}
+.cr-perk p {
+  font-size: clamp(15px, 1.06vw, 20px);
+  line-height: 1.6;
+  color: #dfe8ea;
+}
+
+/* =====================================================================
+   7. Starting your career (background picture)
+   ===================================================================== */
+.cr-start {
+  position: relative;
+  width: 100%;
+  min-height: clamp(420px, 62vh, 700px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: linear-gradient(135deg, #00444f 0%, #222b33 100%);
+  color: #fff;
+  text-align: center;
+}
+.cr-start__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.cr-start__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 30, 36, 0.66);
+}
+.cr-start__content {
+  position: relative;
+  z-index: 1;
+  padding: clamp(50px, 6vw, 110px) clamp(20px, 2.2vw, 42px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.cr-start h2 {
+  margin-bottom: clamp(14px, 1.4vw, 26px);
+  font: 800 clamp(36px, 5vw, 96px) / 1.08 "Inter", sans-serif;
+  letter-spacing: -0.05em;
+}
+.cr-start p {
+  margin-bottom: clamp(26px, 2.6vw, 50px);
+  max-width: 44ch;
+  font-size: clamp(16px, 1.4vw, 26px);
+  line-height: 1.6;
+}
+
+/* =====================================================================
+   8. Quote
+   ===================================================================== */
+.cr-quote {
+  background: #f7f7f7;
+}
+.cr-quote blockquote {
+  max-width: 1000px;
+}
+.cr-quote p {
+  margin-bottom: clamp(18px, 1.8vw, 34px);
+  font: 700 clamp(24px, 2.8vw, 52px) / 1.3 "Inter", sans-serif;
+  letter-spacing: -0.04em;
+  color: #00444f;
+}
+.cr-quote footer {
+  font-size: clamp(16px, 1.3vw, 24px);
+  font-weight: 500;
+  color: #e0a800;
+}
+
+/* =====================================================================
+   Responsive
+   ===================================================================== */
+@media (max-width: 1000px) {
+  .cr-hero h1,
+  .cr-hero p {
+    white-space: normal;
+  }
+}
+@media (max-width: 900px) {
+  .cr-split {
+    grid-template-columns: 1fr;
+  }
+  .cr-perks__grid {
+    grid-template-columns: 1fr;
+  }
+  .cr-job {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .cr-job__apply {
+    justify-self: start;
+    margin-top: 6px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cr-perk {
+    transition: none;
+  }
+  .cr-perk:hover {
+    transform: none;
+  }
+}
+
+
+
+/* Career at Pabrica: image left, text right */
+.cr-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: clamp(30px, 5vw, 90px);
+  padding: clamp(60px, 7vw, 130px) clamp(20px, 2.2vw, 42px);
+  text-align: left;
+}
+
+.cr-intro .cr-split__media img {
+  width: 100%;
+  display: block;
+  aspect-ratio: 4 / 3.2;
+  object-fit: cover;
+}
+
+/* Join Us text background */
+.cr-join .cr-split__text {
+  background: #eaf2f2;
+  padding: clamp(25px, 3vw, 55px);
+}
+
+/* Open Positions left alignment */
+.cr-jobs__head {
+  margin-left: 0;
+  margin-right: auto;
+  text-align: left;
+}
+
+/* Why you should: four cards left, text right */
+.cr-benefit {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: center;
+  gap: clamp(25px, 4vw, 75px);
+}
+
+.cr-benefit-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.cr-benefit-card {
+  min-height: 190px;
+  padding: 28px 22px;
+  background: #00444f;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: 0.3s ease;
+}
+
+.cr-benefit-card:hover {
+  background: #0a6170;
+  transform: translateY(-5px);
+}
+
+.cr-benefit-card h3 {
+  font: 700 clamp(19px, 1.5vw, 27px) / 1.2 "Inter", sans-serif;
+  margin-bottom: 14px;
+}
+
+.cr-benefit-card p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #e1eeee;
+}
+
+/* Starting your career: content right */
+.cr-start {
+  justify-content: flex-end;
+}
+
+.cr-start__content {
+  width: 100%;
+  align-items: flex-end;
+  text-align: right;
+  padding-right: clamp(30px, 8vw, 150px);
+}
+
+@media (max-width: 900px) {
+  .cr-intro,
+  .cr-benefit {
+    grid-template-columns: 1fr;
+  }
+
+  .cr-benefit-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cr-start__content {
+    align-items: center;
+    text-align: center;
+    padding: 50px 20px;
+  }
+}
+
+@media (max-width: 550px) {
+  .cr-benefit-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+/* Starting career: text left */
+.cr-start {
+  position: relative;
+  justify-content: flex-start;
+  min-height: 650px;
+}
+
+.cr-start__content {
+  width: 50%;
+  align-items: flex-start;
+  text-align: left;
+  padding: 80px 0 80px clamp(25px, 7vw, 130px);
+  margin-right: auto;
+}
+
+/* Henry Ford quote: image ke upper right */
+.cr-start__quote {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  right: clamp(25px, 7vw, 130px);
+  transform: translateY(-50%);
+  width: 38%;
+  padding: 35px;
+  background: rgba(0, 30, 36, 0.65);
+  color: #fff;
+}
+
+.cr-start__quote p {
+  font: 700 clamp(20px, 2vw, 36px) / 1.4 "Inter", sans-serif;
+  margin-bottom: 22px;
+}
+
+.cr-start__quote footer {
+  color: #ffc400;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* Old separate quote section hide */
+.cr-quote {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .cr-start {
+    min-height: 750px;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .cr-start__content {
+    width: 100%;
+    padding: 40px 25px;
+  }
+
+  .cr-start__quote {
+    position: relative;
+    top: auto;
+    right: auto;
+    transform: none;
+    width: calc(100% - 50px);
+    margin: 10px 25px 35px;
+  }
+}
+
+/* Henry Ford quote - simple text */
+.cr-start__quote {
+  background: transparent !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  border: none !important;
+  width: 38%;
+}
+
+.cr-start__quote blockquote {
+  margin: 0;
+  padding: 0;
+}
+
+.cr-start__quote p {
+  color: #ece8e8;
+  font-size: clamp(20px, 2vw, 32px);
+  font-weight: 600;
+  line-height: 1.5;
+  margin-bottom: 18px;
+}
+
+.cr-start__quote footer {
+  color: #f7a058;
+  font-size: 17px;
+  font-weight: 500;
+}

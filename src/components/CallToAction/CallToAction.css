@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@800&family=Roboto:wght@400;500&display=swap");
+
+.cta,
+.cta * {
+  box-sizing: border-box;
+}
+.cta {
+  width: 100%;
+  background: #f7f7f7;
+  padding: clamp(40px, 3.7vw, 70px) 0;
+  font-family: "Roboto", Arial, sans-serif;
+}
+.cta__inner {
+  width: 100%;
+  padding-inline: clamp(20px, 2.2vw, 42px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.cta h2 {
+  margin: 0 0 clamp(16px, 1.6vw, 30px);
+  font: 800 clamp(42px, 3.8vw, 72px) / 1.05 "Inter", sans-serif;
+  letter-spacing: -0.05em;
+  color: #00444f;
+}
+.cta p {
+  margin: 0;
+  font-size: clamp(16px, 1.17vw, 22px);
+  color: #2b2b2b;
+}
+.cta__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: clamp(16px, 1.3vw, 25px);
+  height: clamp(58px, 3.8vw, 72px);
+  padding: 0 clamp(26px, 2.4vw, 45px);
+  background: #ffc400;
+  color: #1b1b1b;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: clamp(18px, 1.25vw, 23px);
+  transition: background 0.2s;
+}
+.cta__btn:hover {
+  background: #ffd23d;
+}
+.cta__btn:focus-visible {
+  outline: 3px solid #00444f;
+  outline-offset: 2px;
+}
+.cta__btn svg {
+  width: 24px;
+  height: 24px;
+}
+
+@media (max-width: 680px) {
+  .cta__inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
